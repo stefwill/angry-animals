@@ -4,14 +4,8 @@
 
 [node name="LevelBase" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -266)
+scale = Vector2(1.12891, 1.12891)
 texture = ExtResource("1_0gp4f")
-expand_mode = 3
-stretch_mode = 2
+centered = false
