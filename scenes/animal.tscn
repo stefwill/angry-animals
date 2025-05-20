@@ -29,11 +29,12 @@ texture = ExtResource("2_d7epe")
 shape = SubResource("CircleShape2D_gceah")
 
 [node name="DebugLabel" type="Label" parent="."]
-offset_left = -21.0
-offset_top = -64.0
-offset_right = 371.0
-offset_bottom = 141.0
+offset_left = -19.0
+offset_top = -112.0
+offset_right = 373.0
+offset_bottom = 93.0
 scale = Vector2(0.108563, 0.108563)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 150
 text = "BLAH"
 horizontal_alignment = 1
@@ -55,5 +56,7 @@ stream = ExtResource("6_fiknr")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
