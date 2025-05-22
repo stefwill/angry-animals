@@ -111,12 +111,16 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	pass
+	die()
 
 
 func _on_sleeping_state_changed() -> void:
 	pass # Replace with function body.
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	pass # Replace with function body.
+
+func die() -> void:
+	SignalHub.emit_on_animal_died()
+	queue_free()

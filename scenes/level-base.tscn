@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ymobg18wsei"]
 
 [ext_resource type="Texture2D" uid="uid://boxcfec68d8xp" path="res://assets/scene/colored_castle.png" id="1_0gp4f"]
-[ext_resource type="PackedScene" uid="uid://bc43ko6h1lrkx" path="res://scenes/animal.tscn" id="2_n1bdo"]
+[ext_resource type="Script" uid="uid://bymm27v1t4s7n" path="res://scripts/level_base.gd" id="1_n1bdo"]
 
 [node name="LevelBase" type="Node2D"]
+script = ExtResource("1_n1bdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -266)
@@ -11,5 +12,10 @@ scale = Vector2(1.12891, 1.12891)
 texture = ExtResource("1_0gp4f")
 centered = false
 
-[node name="Animal" parent="." instance=ExtResource("2_n1bdo")]
-position = Vector2(181, 330)
+[node name="SpawnPiont" type="Marker2D" parent="."]
+position = Vector2(172, 310)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
