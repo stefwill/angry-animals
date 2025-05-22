@@ -15,7 +15,3 @@ func spawn_animal() -> void:
 	var new_animal: Animal = ANIMAL.instantiate()
 	new_animal.position = spawn_piont.position
 	add_child(new_animal)
-
-
-func _on_timer_timeout() -> void:
-	spawn_animal()

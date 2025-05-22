@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvlln5htwdsjg"]
+[gd_scene load_steps=5 format=3 uid="uid://dvlln5htwdsjg"]
 
+[ext_resource type="Script" uid="uid://bn3hy48yim35q" path="res://scripts/game_ui.gd" id="1_u2dgd"]
 [ext_resource type="LabelSettings" uid="uid://5llejtc63wu0" path="res://resources/Text_Red_20px.tres" id="1_yubou"]
+[ext_resource type="LabelSettings" uid="uid://5w4s5jhglubx" path="res://resources/Font_Blue_75px.tres" id="2_u001w"]
+[ext_resource type="AudioStream" uid="uid://dy26j82sh48i2" path="res://assets/audio/jazzyfrenchy.mp3" id="3_u2dgd"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_u2dgd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -35,3 +39,27 @@ label_settings = ExtResource("1_yubou")
 layout_mode = 2
 text = "Attempt 0"
 label_settings = ExtResource("1_yubou")
+
+[node name="VBGameOver" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LevelCompleteLabel" type="Label" parent="MarginContainer/VBGameOver"]
+layout_mode = 2
+text = "Level Complete"
+label_settings = ExtResource("2_u001w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer/VBGameOver"]
+layout_mode = 2
+text = "Press Space"
+label_settings = ExtResource("1_yubou")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u2dgd")
+parameters/looping = false

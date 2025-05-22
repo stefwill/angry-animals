@@ -20,20 +20,9 @@ centered = false
 [node name="SpawnPiont" type="Marker2D" parent="."]
 position = Vector2(172, 310)
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-
 [node name="Cup" parent="." instance=ExtResource("3_io7a5")]
 position = Vector2(339, 393)
-
-[node name="Cup2" parent="." instance=ExtResource("3_io7a5")]
-position = Vector2(519, 309)
-
-[node name="Cup3" parent="." instance=ExtResource("3_io7a5")]
-position = Vector2(768, 389)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameUI" parent="CanvasLayer" instance=ExtResource("5_622tk")]
-
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
