@@ -32,12 +32,12 @@ layout_mode = 2
 
 [node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Level 10"
+text = "Level   0"
 label_settings = ExtResource("1_yubou")
 
 [node name="AttemptsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Attempt 0"
+text = "Attempt   0"
 label_settings = ExtResource("1_yubou")
 
 [node name="VBGameOver" type="VBoxContainer" parent="MarginContainer"]

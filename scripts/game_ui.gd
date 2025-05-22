@@ -6,12 +6,12 @@ extends Control
 @onready var game_over_sound: AudioStreamPlayer = $GameOverSound
 
 var _attempt: int = -1
-var _level: int = 0
+#var _level: int = 0
 
 func _ready() -> void:
 	on_attempt_made()
-	_level = 1
-	level_label.text = "Level   %s" % _level
+	#_level = 1
+	#level_label.text = "Level   %s" % _level
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
@@ -30,7 +30,7 @@ func on_attempt_made() -> void:
 
 func on_level_complete() -> void:
 	vb_game_over.show()
-	_level += 1
+	#_level += 1
 
 func on_cup_die(remaining_cups: int) -> void:
 	if remaining_cups == 0:
