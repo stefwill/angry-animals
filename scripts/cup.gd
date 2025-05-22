@@ -1,0 +1,19 @@
+extends StaticBody2D
+
+class_name Cup
+
+static var _num_cups: int = 0
+
+@onready var vanish_animation: AnimationPlayer = $VanishAnimation
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	_num_cups += 1
+	print("_num_cups: ", _num_cups)
+
+func die() -> void:
+	vanish_animation.play("vanish")
+
+func _on_vanish_animation_animation_finished(anim_name: StringName) -> void:
+	_num_cups -= 1
+	queue_free()

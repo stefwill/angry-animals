@@ -36,7 +36,7 @@ func setup() -> void:
 
 func _physics_process(_delta: float) -> void:
 	update_state()
-	update_debug_label()
+	#update_debug_label()
 
 
 func update_debug_label() -> void:
@@ -115,11 +115,16 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_sleeping_state_changed() -> void:
-	pass # Replace with function body.
+	if sleeping:
+		for body in get_colliding_bodies():
+			if body is Cup:
+				body.die()
+		call_deferred("die")
 
 
-func _on_body_entered(_body: Node) -> void:
-	pass # Replace with function body.
+func _on_body_entered(body: Node) -> void:
+	if body is Cup and !kick_sound.playing:
+		kick_sound.play()
 
 func die() -> void:
 	SignalHub.emit_on_animal_died()
