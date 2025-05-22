@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0ymobg18wsei"]
+[gd_scene load_steps=4 format=3 uid="uid://c0ymobg18wsei"]
 
 [ext_resource type="Texture2D" uid="uid://boxcfec68d8xp" path="res://assets/scene/colored_castle.png" id="1_0gp4f"]
 [ext_resource type="Script" uid="uid://bymm27v1t4s7n" path="res://scripts/level_base.gd" id="1_n1bdo"]
+[ext_resource type="PackedScene" uid="uid://bcdx08857j3hb" path="res://scenes/water.tscn" id="3_3ptnj"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_n1bdo")
@@ -11,6 +12,8 @@ position = Vector2(0, -266)
 scale = Vector2(1.12891, 1.12891)
 texture = ExtResource("1_0gp4f")
 centered = false
+
+[node name="Water" parent="." instance=ExtResource("3_3ptnj")]
 
 [node name="SpawnPiont" type="Marker2D" parent="."]
 position = Vector2(172, 310)
