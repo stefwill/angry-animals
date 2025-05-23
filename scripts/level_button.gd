@@ -4,10 +4,12 @@ extends TextureButton
 
 @onready var hover_anim: AnimationPlayer = $HoverAnim
 @onready var level_label: Label = $MC/VBC/LevelLabel
+@onready var score_label: Label = $MC/VBC/ScoreLabel
 
 
 func _ready() -> void:
 	level_label.text = level_number
+	score_label.text = str(GameManager.get_level_best(level_number))
 
 func _on_mouse_entered() -> void:
 	hover_anim.play("hover_in")

@@ -11,10 +11,11 @@ var _attempt: int = -1
 func _ready() -> void:
 	level_label.text = "Level   %s" %  GameManager.level_selected
 	on_attempt_made()
-	
 
-func _unhandled_input(event: InputEvent) -> void:
-	pass
+
+
+#func _unhandled_input(event: InputEvent) -> void:
+	#pass
 
 func _enter_tree() -> void:
 	SignalHub.on_attempt_made.connect(on_attempt_made)
@@ -32,4 +33,5 @@ func on_cup_die(remaining_cups: int) -> void:
 	if remaining_cups == 0:
 		vb_game_over.show()
 		game_over_sound.play()
+		GameManager.set_score_for_level(GameManager.level_selected, _attempt)
 	

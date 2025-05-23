@@ -13,7 +13,7 @@ func _ready() -> void:
 func die() -> void:
 	vanish_animation.play("vanish")
 
-func _on_vanish_animation_animation_finished(anim_name: StringName) -> void:
+func _on_vanish_animation_animation_finished(_anim_name: StringName) -> void:
 	_num_cups -= 1
 	SignalHub.emit_on_cup_die(_num_cups)
 	if _num_cups == 0:
