@@ -9,7 +9,6 @@ static var _num_cups: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_num_cups += 1
-	print("_num_cups: ", _num_cups)
 
 func die() -> void:
 	vanish_animation.play("vanish")

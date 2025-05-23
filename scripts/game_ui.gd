@@ -9,16 +9,12 @@ var _attempt: int = -1
 #var _level: int = 0
 
 func _ready() -> void:
+	level_label.text = "Level   %s" %  GameManager.level_selected
 	on_attempt_made()
-	#_level = 1
-	#level_label.text = "Level   %s" % _level
+	
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
-		GameManager.load_main_scene()
-	elif vb_game_over.visible and event.is_action_pressed("ui_accept"):
-		#ScoreManager.high_score = _score
-		GameManager.load_main_scene()
+	pass
 
 func _enter_tree() -> void:
 	SignalHub.on_attempt_made.connect(on_attempt_made)
